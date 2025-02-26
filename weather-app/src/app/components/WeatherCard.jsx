@@ -1,5 +1,6 @@
 import React from "react";
 import { CiLocationOn } from "react-icons/ci";
+import { Navbar } from "./Navbar";
 
 export const WeatherCard = ({
   cardStyle,
@@ -14,15 +15,17 @@ export const WeatherCard = ({
   iconShadow,
   status,
   statusStyle,
+  color1,
+  color2,
+  color3,
 }) => {
   return (
     <div
       className={
-        `w-[414px] h-[832px] flex flex-col rounded-[48px] relative z-50 backdrop-blur-md ` +
+        `w-[414px] h-[832px] flex flex-col rounded-[48px] relative z-50 backdrop-blur-lg ` +
         cardStyle
       }
     >
-      <div className="absolute inset-2 rounded-full"></div>
       <div className="absolute left-[325px] top-[85px]">
         <CiLocationOn className={`w-[32px] h-[32px] ` + loc} />
       </div>
@@ -36,7 +39,7 @@ export const WeatherCard = ({
         <img
           src={icon}
           alt="icon"
-          className="w-[264px] h-[264px] ml-[68.5px] mr-[64.61px] mt-[24px] z-15"
+          className="w-[264px] h-[264px] box-border ml-[68.5px] mr-[64.61px] mt-[24px] z-15"
         />
         <img
           className="w-[264px] h-[264px] ml-[80.61px] mr-[52.5px] mt-[-220px] z-10"
@@ -56,6 +59,12 @@ export const WeatherCard = ({
           {status}
         </p>
       </div>
+      <Navbar
+        classname="absolute left-[48px] top-[756px]"
+        color1={color1}
+        color2={color2}
+        color3={color3}
+      />
     </div>
   );
 };

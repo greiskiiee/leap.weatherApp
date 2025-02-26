@@ -2,21 +2,14 @@ import React from "react";
 import { WeatherCard } from "./WeatherCard";
 import { CircleBorder } from "./CircleBorder";
 
-export const Background = ({
-  classname,
-  temp,
-  status,
-  date,
-  placeName,
-  isdark,
-}) => {
+export const Background = ({ classname }) => {
   return (
     <div
       className={
         `w-[800px] h-[1200px] flex justify-center items-center  ` + classname
       }
     >
-      {isdark ? (
+      {/* {isdark ? (
         <WeatherCard
           cardStyle="bg-gradient-to-b from-[#1F2937] bg-opacity-50 z-40"
           icon="https://s3-alpha-sig.figma.com/img/b6fe/b523/f01b7c0c0765dab6de4f9f5cbb022e1d?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GnqkFrtyd5NpkYxprvjxMj2ckCkgwwp2Bk65oBFIuU4joqvzDi-VaizLlo2B4VuAUqqeO1rUdh1HiIurvvva~N6YfW7u-rh55-nVhRrl1~xO-wxovybvB2kA1Us4SB5QkGYbMrbZ07KzopgLCYDXhiAOcNCgVfy~4NIOoWa7FOMMjYUKDiSBMv2OeVmjNFMhln4ImSY05rsvbeAwZsASVVm8lyf-EcD5JRmIsnxn0oBPq1UUoFlPQ8THPRAqhbkt1Q6l2LjfzxKzCiituC4v5N3JD9iTFPZz~BQG8TD8T5tmaC5oIXAQOBazpfXJP1tUQ6k1CVna5P9Pxz7xpsOmww__"
@@ -46,15 +39,15 @@ export const Background = ({
           statusStyle="text-[#FF8E27]"
           iconShadow="/shadowSun.png"
         ></WeatherCard>
-      )}
-      <img
+      )} */}
+      {/* <img
         src="Group 2.png"
-        className="absolute z-30 top-[50px] left-[100px]"
+        className="absolute z-30 top-[127px] left-[130px]"
       ></img>
       <img
         src="Ellipse 22.png"
-        className="absolute z-30 top-[968px] left-[1327px]"
-      ></img>
+        className="absolute z-30 top-[938px] left-[1327px]"
+      ></img> */}
     </div>
   );
 };
