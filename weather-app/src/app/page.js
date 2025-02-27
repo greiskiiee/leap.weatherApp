@@ -65,11 +65,7 @@ export default function Home() {
         <CircleBorder classname="w-[540px] h-[540px] "></CircleBorder>
         <CircleBorder classname="w-[340px] h-[340px] "></CircleBorder>
         <CircleBorder classname="w-[140px] h-[140px] "></CircleBorder>
-        <CircleBorder classname="w-[1340px] h-[1340px] border-[#fff]"></CircleBorder>
-        <CircleBorder classname="w-[940px] h-[940px] border-[#fff] "></CircleBorder>
-        <CircleBorder classname="w-[540px] h-[540px] border-[#fff]"></CircleBorder>
-        <CircleBorder classname="w-[340px] h-[340px] border-[#fff]"></CircleBorder>
-        <CircleBorder classname="w-[140px] h-[140px] border-[#fff]"></CircleBorder>
+
         <div className="absolute w-fit h-fit left-[752px] top-[557px] z-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
