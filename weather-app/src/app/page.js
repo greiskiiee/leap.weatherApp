@@ -27,6 +27,10 @@ export default function Home() {
     },
   ]);
 
+  fetch(
+    "https://api.weatherapi.com/v1/forecast.json?key=c54db69bc7dc4466bf415506241712&q=Beijing"
+  ).then((response) => console.log(response));
+
   return (
     <div className="w-[2200px] h-[1200px] flex justify-center items-center relative">
       <div className="w-[1600px] h-[1200px] flex justify-center items-center border border-transparent rounded-[32px] absolute ">
