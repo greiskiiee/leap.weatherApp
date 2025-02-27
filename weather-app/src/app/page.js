@@ -2,6 +2,7 @@ import { Search } from "./components/Search";
 import { Background } from "./components/Background";
 import { CircleBorder } from "./components/CircleBorder";
 import { WeatherCard } from "./components/WeatherCard";
+import { SearchResult } from "./components/SearchResult";
 export default function Home() {
   return (
     <div className="w-[2200px] h-[1200px] flex justify-center items-center relative">
@@ -47,6 +48,7 @@ export default function Home() {
           iconShadow="/shadow.png"
           color1="#F9FAFB"
           color2="#4B5563"
+          color3="#4B5563"
         ></WeatherCard>
         <WeatherCard
           cardStyle="bg-gradient-to-t from-[#F9FAFB] bg-opacity-70 absolute z-40 left-[-620px] top-[0px]"
@@ -104,6 +106,11 @@ export default function Home() {
               fill="#111111"
             />
           </svg>
+        </div>
+
+        <div className="w-[567px] h-fit py-[16px] flex flex-col justify-center items-center opacity-95 backdrop-blur-xl bg-white absolute z-50 top-[130px] left-[40px] rounded-[24px]">
+          <SearchResult cityName="Tokyo" country="Japan" />
+          <SearchResult cityName="Tokyo" country="Japan" />
         </div>
       </div>
     </div>
