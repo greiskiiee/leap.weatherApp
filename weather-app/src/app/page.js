@@ -7,12 +7,23 @@ import { SearchResult } from "./components/SearchResult";
 import { useState } from "react";
 
 export default function Home() {
+  const date = "February 27, 2025";
   const [data, setData] = useState([
     {
       cityName: "Tokyo",
       country: "Japan",
       tempDay: "26",
+      statusDay: "Bright",
       tempNight: "17",
+      statusNight: "Clear",
+    },
+    {
+      cityName: "Beijing",
+      country: "China",
+      tempDay: "26",
+      statusDay: "Bright",
+      tempNight: "17",
+      statusNight: "Clear",
     },
   ]);
 
@@ -34,18 +45,18 @@ export default function Home() {
         <WeatherCard
           isDark={true}
           cardStyle="bg-gradient-to-b from-[#1F2937] bg-opacity-70 absolute z-40 left-[600px] top-[0px]"
-          date="September 21, 2025"
-          placeName="Krakow"
-          temp="17"
-          status="Clear"
+          date={date}
+          placeName={data[0].cityName}
+          temp={data[0].tempNight}
+          status={data[0].statusNight}
         ></WeatherCard>
         <WeatherCard
           isDark={false}
           cardStyle="bg-gradient-to-t from-[#F9FAFB] bg-opacity-70 absolute z-40 left-[-620px] top-[0px]"
-          date="September 21, 2025"
-          placeName="Krakow"
-          temp="26"
-          status="Bright"
+          date={date}
+          placeName={data[0].cityName}
+          temp={data[0].tempDay}
+          status={data[0].statusDay}
         ></WeatherCard>
 
         <Search className="absolute z-50 left-[40px] top-[40px] " />
