@@ -48,7 +48,6 @@ export default function Home() {
           iconShadow="/shadow.png"
           color1="#F9FAFB"
           color2="#4B5563"
-          color3="#4B5563"
         ></WeatherCard>
         <WeatherCard
           cardStyle="bg-gradient-to-t from-[#F9FAFB] bg-opacity-70 absolute z-40 left-[-620px] top-[0px]"
@@ -65,7 +64,6 @@ export default function Home() {
           iconShadow="/shadowSun.png"
           color1="#111827"
           color2="#D1D5DB"
-          color3="#D1D5DB"
         ></WeatherCard>
 
         <Search className="absolute z-50 left-[40px] top-[40px] " />
@@ -108,7 +106,7 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="w-[567px] h-fit py-[16px] flex flex-col justify-center items-center opacity-95 backdrop-blur-xl bg-white absolute z-50 top-[130px] left-[40px] rounded-[24px]">
+        <div className="w-[567px] h-fit py-[16px] flex flex-col justify-center items-center bg-opacity-85 backdrop-blur-xl bg-white absolute z-50 top-[130px] left-[40px] rounded-[24px]">
           <SearchResult cityName="Tokyo" country="Japan" />
           <SearchResult cityName="Tokyo" country="Japan" />
         </div>

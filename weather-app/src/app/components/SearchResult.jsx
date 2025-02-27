@@ -1,5 +1,4 @@
 import React from "react";
-import { CiLocationOn } from "react-icons/ci";
 
 export const SearchResult = ({ cityName, country }) => {
   return (

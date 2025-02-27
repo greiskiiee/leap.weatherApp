@@ -49,7 +49,7 @@ export const WeatherCard = ({
       <div className="flex flex-col w-[250px] h-[230px] ml-[48px] absolute z-10 top-[460px] justify-start">
         <p
           className={
-            ` text-[144px] manrope font-[800] text-transparent bg-gradient-to-t  bg-clip-text ` +
+            ` text-[144px] manrope font-[800] text-transparent bg-gradient-to-t bg-clip-text ` +
             tempStyle
           }
         >
