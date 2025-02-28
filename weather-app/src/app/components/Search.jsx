@@ -1,7 +1,7 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 
-export const Search = ({ className }) => {
+export const Search = ({ className, handleChange, handleClick }) => {
   return (
     <div
       className={
@@ -9,11 +9,11 @@ export const Search = ({ className }) => {
         className
       }
     >
-      {/* <div className="w-fit h-fit">
+      <button className="w-fit h-fit" onClick={handleClick}>
         <IoIosSearch className="w-[48px] h-[48px] opacity-20" />
-      </div> */}
+      </button>
 
-      <svg
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         width="48"
         height="48"
@@ -26,12 +26,15 @@ export const Search = ({ className }) => {
             fill="black"
           />
         </g>
-      </svg>
+      </svg> */}
 
       <input
         type="text"
         defaultValue="Search"
         className={`w-[455px] items-center bg-transparent text-[32px] opacity-20 font-[700] manrope `}
+        onChange={(event) => {
+          handleChange(event.target.value);
+        }}
       />
     </div>
   );

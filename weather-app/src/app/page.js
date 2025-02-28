@@ -1,35 +1,29 @@
 "use client";
+import axios from "axios";
 import { Search } from "./components/Search";
 import { Background } from "./components/Background";
 import { CircleBorder } from "./components/CircleBorder";
 import { WeatherCard } from "./components/WeatherCard";
 import { SearchResult } from "./components/SearchResult";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 
 export default function Home() {
-  const date = "February 27, 2025";
-  const [data, setData] = useState([
-    {
-      cityName: "Tokyo",
-      country: "Japan",
-      tempDay: "26",
-      statusDay: "Bright",
-      tempNight: "17",
-      statusNight: "Clear",
-    },
-    {
-      cityName: "Beijing",
-      country: "China",
-      tempDay: "26",
-      statusDay: "Bright",
-      tempNight: "17",
-      statusNight: "Clear",
-    },
-  ]);
+  const [data, setData] = useState({});
+  // const name = "Shinjuku";
+  const [name, setName] = useState("Beijing");
+  const [input, setInput] = useState("");
 
-  fetch(
-    "https://api.weatherapi.com/v1/forecast.json?key=c54db69bc7dc4466bf415506241712&q=Beijing"
-  ).then((response) => console.log(response));
+  const handleClick = () => {
+    setName(input);
+  };
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.weatherapi.com/v1/forecast.json?key=c54db69bc7dc4466bf415506241712&q=${name}`
+      )
+      .then((res) => setData(res.data));
+  }, [name]);
 
   return (
     <div className="w-[2200px] h-[1200px] flex justify-center items-center relative">
@@ -49,21 +43,25 @@ export default function Home() {
         <WeatherCard
           isDark={true}
           cardStyle="bg-gradient-to-b from-[#1F2937] bg-opacity-70 absolute z-40 left-[600px] top-[0px]"
-          date={date}
-          placeName={data[0].cityName}
-          temp={data[0].tempNight}
-          status={data[0].statusNight}
+          date={data?.location?.localtime}
+          placeName={data?.location?.name}
+          temp={data?.forecast?.forecastday[0]?.day?.mintemp_c}
+          status={data?.forecast?.forecastday[0]?.day?.condition?.text}
         ></WeatherCard>
         <WeatherCard
           isDark={false}
           cardStyle="bg-gradient-to-t from-[#F9FAFB] bg-opacity-70 absolute z-40 left-[-620px] top-[0px]"
-          date={date}
-          placeName={data[0].cityName}
-          temp={data[0].tempDay}
-          status={data[0].statusDay}
+          date={data?.location?.localtime}
+          placeName={data?.location?.name}
+          temp={data?.forecast?.forecastday[0]?.day?.maxtemp_c}
+          status={data?.forecast?.forecastday[0]?.day?.condition?.text}
         ></WeatherCard>
 
-        <Search className="absolute z-50 left-[40px] top-[40px] " />
+        <Search
+          className="absolute z-50 left-[40px] top-[40px] "
+          handleChange={setInput}
+          handleClick={handleClick}
+        />
         <CircleBorder classname="w-[1340px] h-[1340px]"></CircleBorder>
         <CircleBorder classname="w-[940px] h-[940px] "></CircleBorder>
         <CircleBorder classname="w-[540px] h-[540px] "></CircleBorder>
@@ -99,10 +97,10 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="w-[567px] h-fit py-[16px] flex flex-col justify-center items-center bg-opacity-85 backdrop-blur-xl bg-white absolute z-50 top-[130px] left-[40px] rounded-[24px]">
+        {/* <div className="w-[567px] h-fit py-[16px] flex flex-col justify-center items-center bg-opacity-85 backdrop-blur-xl bg-white absolute z-50 top-[130px] left-[40px] rounded-[24px]">
           <SearchResult cityName="Tokyo" country="Japan" />
           <SearchResult cityName="Tokyo" country="Japan" />
-        </div>
+        </div> */}
       </div>
     </div>
   );
