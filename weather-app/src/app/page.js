@@ -1,10 +1,10 @@
 "use client";
 import axios from "axios";
-import { Search } from "./components/Search";
-import { Background } from "./components/Background";
-import { CircleBorder } from "./components/CircleBorder";
-import { WeatherCard } from "./components/WeatherCard";
+import { Search } from "@/components/Search";
+import { CircleBorder } from "@/components/CircleBorder";
+import { WeatherCard } from "@/components/WeatherCard";
 import { useEffect, useState } from "react";
+import { Background } from "@/components/Background";
 
 export default function Home() {
   const [data, setData] = useState({});
