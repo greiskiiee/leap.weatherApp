@@ -4,8 +4,7 @@ import { Search } from "./components/Search";
 import { Background } from "./components/Background";
 import { CircleBorder } from "./components/CircleBorder";
 import { WeatherCard } from "./components/WeatherCard";
-import { SearchResult } from "./components/SearchResult";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [data, setData] = useState({});
